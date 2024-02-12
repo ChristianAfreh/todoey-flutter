@@ -29,24 +29,3 @@ class TaskTile extends StatelessWidget {
     );
   }
 }
-
-//  (bool? checkboxState) {
-//           setState(() {
-//             isChecked = checkboxState!;
-//           });
-//         },
-
-// class TaskCheckBox extends StatelessWidget {
-//   const TaskCheckBox(
-//       {super.key,
-//       required this.checkboxState,
-//       required this.toggleCheckboxState});
-
-//   final bool checkboxState;
-//   final Function(bool?)? toggleCheckboxState;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return 
-//   }
-// }
