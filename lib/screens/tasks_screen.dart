@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoey/screens/add_task_screen.dart';
 import 'package:todoey/widgets/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
@@ -8,11 +9,16 @@ class TasksScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
-      floatingActionButton: const FloatingActionButton(
-        onPressed: null,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => const AddTaskScreen(),
+          );
+        },
         backgroundColor: Colors.lightBlueAccent,
         tooltip: 'Add New Task',
-        child: Icon(
+        child: const Icon(
           Icons.add,
         ),
       ),
