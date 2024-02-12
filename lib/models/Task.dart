@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 class Task {
   Task({required this.name, this.isDone = false});
 

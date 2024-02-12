@@ -3,7 +3,7 @@ import 'package:todoey/models/Task.dart';
 import 'package:todoey/widgets/task_tile.dart';
 
 class TasksList extends StatefulWidget {
-  TasksList({
+  const TasksList({
     super.key,
   });
 
