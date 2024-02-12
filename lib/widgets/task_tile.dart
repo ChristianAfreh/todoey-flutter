@@ -1,52 +1,52 @@
 import 'package:flutter/material.dart';
 
-class TaskTile extends StatefulWidget {
+class TaskTile extends StatelessWidget {
   const TaskTile({
     super.key,
+    required this.taskTitle,
+    required this.isChecked,
+    required this.checkboxCallback,
   });
 
-  @override
-  State<TaskTile> createState() => _TaskTileState();
-}
-
-class _TaskTileState extends State<TaskTile> {
-  bool isChecked = false;
+  final bool isChecked;
+  final String taskTitle;
+  final Function(bool?)? checkboxCallback;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        'Wash the car',
+        taskTitle,
         style: TextStyle(
           decoration: isChecked ? TextDecoration.lineThrough : null,
         ),
       ),
-      trailing: TaskCheckBox(
-        checkboxState: isChecked,
-        toggleCheckboxState: (bool? checkboxState) {
-          setState(() {
-            isChecked = checkboxState!;
-          });
-        },
+      trailing: Checkbox(
+        activeColor: Colors.lightBlueAccent,
+        value: isChecked,
+        onChanged: checkboxCallback,
       ),
     );
   }
 }
 
-class TaskCheckBox extends StatelessWidget {
-  const TaskCheckBox(
-      {super.key,
-      required this.checkboxState,
-      required this.toggleCheckboxState});
+//  (bool? checkboxState) {
+//           setState(() {
+//             isChecked = checkboxState!;
+//           });
+//         },
 
-  final bool checkboxState;
-  final Function(bool?)? toggleCheckboxState;
+// class TaskCheckBox extends StatelessWidget {
+//   const TaskCheckBox(
+//       {super.key,
+//       required this.checkboxState,
+//       required this.toggleCheckboxState});
 
-  @override
-  Widget build(BuildContext context) {
-    return Checkbox(
-      value: checkboxState,
-      onChanged: toggleCheckboxState,
-    );
-  }
-}
+//   final bool checkboxState;
+//   final Function(bool?)? toggleCheckboxState;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return 
+//   }
+// }
